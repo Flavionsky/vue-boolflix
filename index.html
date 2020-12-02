@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- CSS Frameworks -->
+
+		<!-- Font Awesome 5.15.1 (CDN) -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+
+		<!-- JS Frameworks -->
+
+    <!-- Vue 2.6.12 -->
+    <script src="libs/vue.js" charset="utf-8"></script>
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+		<!-- Custom CSS -->
+
+		<link rel="stylesheet" href="css/style.css">
+
+    <title>BoolFlix</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <div class="nav_bar d_flex">
+
+          <div class="left_bar d_flex">
+            <h1>BOOLFLIX</h1>
+            <ul class="d_flex">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Serie TV</a>
+              </li>
+              <li>
+                <a href="#">Film</a>
+              </li>
+              <li>
+                <a href="#">Nuovi e popolari</a>
+              </li>
+              <li>
+                <a href="#">La mia lista</a>
+              </li>
+            </ul>
+          </div>
+          <div class="right_bar">
+            <ul class="d_flex">
+              <li>
+                <a href="">
+                  <div class="search-users d-flex">
+                    <i class="fas fa-search"></i>
+                    <input v-model="letter" type="text" placeholder="Cerca o inizia una nuova chat">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-gift"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-bell"></i>
+                </a>
+              </li>
+              <li class="avatar">
+                <a href="#">
+                  <img src="img/avatar.jpg" alt="my Avatar">
+                </a>
+                <span class="dropdown"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="main_content">
+        </div>
+      </main>
+    </div>
+  <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
