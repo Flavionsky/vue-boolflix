@@ -48,6 +48,23 @@ a{
     align-items: center;
     margin-right: 40px;
 }
+.right_bar .search_films{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+}
+.right_bar  .search_films > input{
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.right_bar .search_films > i{
+    font-size: 20px;
+    position: absolute;
+    left: -30px;
+  }
 .right_bar > ul li{
     font-size: 22px;
     padding-left: 15px;
