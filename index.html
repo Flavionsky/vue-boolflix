@@ -52,8 +52,8 @@
               <li>
                 <a href="#">
                   <div class="search_films d_flex">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Titoli, persone e generi">
+                    <i @click="getMovie()" class="fas fa-search"></i>
+                    <input v-model="inputQuery" type="text" placeholder="Titoli, persone e generi">
                   </div>
                 </a>
               </li>
@@ -79,6 +79,24 @@
       </nav>
       <main>
         <div class="main_content">
+          <ul class="d_flex">
+            <li class="d_flex" v-for="movie in movies">
+              <h3>
+                {{movie.title}}
+              </h3>
+              <h4>
+                Titolo originale : {{movie.original_title}}
+              </h4>
+              
+              <img :src="imgSrc(movie)" alt="">
+              <p>
+                Voto: {{movie.vote_average}}
+              </p>
+              <p>
+                <img :src="flagLanguage(movie)" alt="">
+              </p>
+            </li>
+          </ul>
         </div>
       </main>
     </div>

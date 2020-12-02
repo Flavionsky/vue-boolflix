@@ -26,12 +26,6 @@ a{
     align-items: center;
     justify-content: space-between;
 }
-.main_content{
-    width: 100vw;
-    height: 90vh;
-    overflow-y: auto;
-    background-color: #141414;
-}
 .left_bar{
     align-items: center;
     margin-left: 40px;
@@ -64,7 +58,7 @@ a{
     font-size: 20px;
     position: absolute;
     left: -30px;
-  }
+}
 .right_bar > ul li{
     font-size: 22px;
     padding-left: 15px;
@@ -85,4 +79,35 @@ a{
     border-style: solid;
     border-width: 5px 5px 0 5px;
     border-color: #fff transparent transparent transparent;
+}
+.main_content{
+    width: 100vw;
+    height: 90vh;
+    overflow-y: auto;
+    background-color: #141414;
+    color: white;
+}
+.main_content ul{
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.main_content ul li{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    -webkit-box-shadow: 0px 5px 15px 5px rgba(255,255,255,0.3); 
+    box-shadow: 0px 5px 15px 5px rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+.main_content ul li img{
+    width: 350px;
+    height: 400px;
+}
+.main_content ul li p img{
+    width: 30px;
+    height: 30px;
 }
