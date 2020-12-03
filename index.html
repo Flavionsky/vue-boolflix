@@ -53,7 +53,7 @@
                 <a href="#">
                   <div class="search_films d_flex">
                     <i @click="getMovie()" class="fas fa-search"></i>
-                    <input v-model="inputQuery" type="text" placeholder="Titoli, persone e generi">
+                    <input @keyup.enter="getMovie()" v-model="inputQuery" type="text" placeholder="Titoli, persone e generi">
                   </div>
                 </a>
               </li>
@@ -78,23 +78,33 @@
         </div>
       </nav>
       <main>
-        <div class="main_content">
+        <div class="main_content d_flex">
           <ul class="d_flex">
-            <li class="d_flex" v-for="movie in movies">
-              <h3>
-                {{movie.title}}
-              </h3>
-              <h4>
-                Titolo originale : {{movie.original_title}}
-              </h4>
-              
+            <li @mouseover="display = index" @mouseleave="display = null" class="d_flex" v-for="(movie, index) in movies">
               <img :src="imgSrc(movie)" alt="">
-              <p>
-                Voto: {{movie.vote_average}}
-              </p>
-              <p>
-                <img :src="flagLanguage(movie)" alt="">
-              </p>
+              <h3>
+                {{changeTitle(movie)}}
+              </h3>
+              <div id="hiddenDescription" :class="{active: (display === index), hidden:(display != index)}">
+                  <img :src="'img/' + movie.original_language +'.svg'" alt="">
+                <ul class="d_flex">
+                  <li><i class="far fa-star" :class="{fas:(movie.vote_average > 1)}"></i></li>
+                  <li><i class="far fa-star" :class="{fas:(movie.vote_average > 3)}"></i></li>
+                  <li><i class="far fa-star" :class="{fas:(movie.vote_average > 5)}"></i></li>
+                  <li><i class="far fa-star" :class="{fas:(movie.vote_average > 7)}"></i></li>
+                  <li><i class="far fa-star" :class="{fas:(movie.vote_average > 9)}"></i></li>
+                </ul>
+              </div>
+            </li>
+            <li :class="{hidden:(isActive == false), active:(isActive == true)}">
+              <a @click="myBack" href="#">                    
+                <i class="fas fa-3x fa-arrow-circle-left"></i>
+              </a>
+            </li>
+            <li :class="{hidden:(isActive == false), active:(isActive == true)}">
+              <a @click="myNext" href="#">
+                <i class="fas fa-3x fa-arrow-circle-right"></i>
+              </a>
             </li>
           </ul>
         </div>
