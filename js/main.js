@@ -45,6 +45,7 @@ var app = new Vue({
     myNext(){
       this.nextPage++;
       this.getMovie();
+      this.scrollTop();
     },
     myBack(){
       this.nextPage--;
@@ -52,6 +53,7 @@ var app = new Vue({
         this.nextPage = 1;
       }
       this.getMovie();
+      this.scrollTop();
     },
     changeTitle(mov){
       let title = mov.title;
@@ -59,6 +61,13 @@ var app = new Vue({
         title = mov.name;
       }
       return title;
+    },
+    scrollTop(){
+      Vue.nextTick(function () {
+        let myMain = document.getElementsByClassName("main_content")[0];
+        myMain.scrollTop = 0;
+      })
+
     }
   }
 });

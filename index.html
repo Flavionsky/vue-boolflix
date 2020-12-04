@@ -79,14 +79,15 @@
       </nav>
       <main>
         <div class="main_content d_flex">
-          <ul class="d_flex">
+          <ul class="film d_flex">
             <li @mouseover="display = index" @mouseleave="display = null" class="d_flex" v-for="(movie, index) in movies">
               <img :src="imgSrc(movie)" alt="">
-              <h3>
-                {{changeTitle(movie)}}
-              </h3>
               <div id="hiddenDescription" :class="{active: (display === index), hidden:(display != index)}">
-                  <img :src="'img/' + movie.original_language +'.svg'" alt="">
+                <h3>
+                  {{changeTitle(movie)}}
+                </h3>
+                <p class="overview">{{movie.overview}}</p>
+                <img :src="'img/' + movie.original_language +'.svg'" alt="">
                 <ul class="d_flex">
                   <li><i class="far fa-star" :class="{fas:(movie.vote_average > 1)}"></i></li>
                   <li><i class="far fa-star" :class="{fas:(movie.vote_average > 3)}"></i></li>
@@ -96,6 +97,8 @@
                 </ul>
               </div>
             </li>
+          </ul>
+          <ul class="d_flex">
             <li :class="{hidden:(isActive == false), active:(isActive == true)}">
               <a @click="myBack" href="#">                    
                 <i class="fas fa-3x fa-arrow-circle-left"></i>
